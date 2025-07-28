@@ -1,0 +1,30 @@
+.liked-users-page {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  min-height: 100vh;
+  color: #e3f2fd;
+}
+
+.liked-users-page h2 {
+  font-size: 2.2rem;
+  color: #90caf9;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 12px rgba(144, 202, 249, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.liked-users-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.liked-users-page,
+.liked-users-page * {
+  transition: all 0.3s ease;
+}
