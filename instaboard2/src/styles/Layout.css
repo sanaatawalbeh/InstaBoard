@@ -6,6 +6,10 @@
   color: #f0f0f0;
   font-family: 'Segoe UI', 'Roboto', sans-serif;
 }
+.layout-wrapper.light {
+  background-color: #eeeeee;
+  color: #222;
+}
 
 .layout-content {
   flex: 1;
@@ -25,3 +29,4 @@
     transform: translateY(0);
   }
 }
+

@@ -1,9 +1,9 @@
 import { FaExclamationTriangle } from "react-icons/fa";
 import "../styles/NotFound.css";
 
-export default function NotFound() {
+export default function NotFound({ lightMode }) {
   return (
-    <div className="notfound-container">
+    <div className={`notfound-container ${lightMode ? "light" : "dark"}`}>
       <div className="notfound-icon-wrapper">
         <FaExclamationTriangle className="notfound-icon" />
       </div>

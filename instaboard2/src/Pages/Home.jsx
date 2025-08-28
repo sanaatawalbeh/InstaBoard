@@ -3,16 +3,15 @@ import {
   FaUsers,
   FaInfoCircle,
   FaArrowRight,
-  FaUserFriends,
   FaHeart,
   FaSearch,
 } from "react-icons/fa";
 
 import "../styles/Home.css";
 
-export default function Home() {
+export default function Home({lightMode}) {
   return (
-    <div className="home-container">
+    <div className={`home-container ${lightMode ? "light" : "dark"}`}>
       <div className="hero-section">
         <h1>
           Welcome to <span className="highlight">InstaBoard</span>
@@ -22,10 +21,16 @@ export default function Home() {
         </p>
 
         <div className="home-buttons">
-          <Link to="/team" className="home-btn">
+          <Link
+            to="/team"
+            className={`home-btn ${lightMode ? "light" : "dark"}`}
+          >
             <FaUsers /> Meet The Team <FaArrowRight />
           </Link>
-          <Link to="/about" className="home-btn outline">
+          <Link
+            to="/about"
+            className={`home-btn outline ${lightMode ? "light" : "dark"}`}
+          >
             <FaInfoCircle /> About Us
           </Link>
         </div>
@@ -35,7 +40,7 @@ export default function Home() {
         <h2 className="features-title">Our Features</h2>
 
         <div className="features-section">
-          <div className="feature-card">
+          <div className={`feature-card ${lightMode ? "light" : "dark"}`}>
             <div className="feature-number">01</div>
             <h3>
               <div className="icon-wrapper">
@@ -46,7 +51,7 @@ export default function Home() {
             <p>Get to know random users from around the world in one click.</p>
           </div>
 
-          <div className="feature-card">
+          <div className={`feature-card ${lightMode ? "light" : "dark"}`}>
             <div className="feature-number">02</div>
             <h3>
               <div className="icon-wrapper">
@@ -57,7 +62,7 @@ export default function Home() {
             <p>Mark your favorites and save them locally using localStorage.</p>
           </div>
 
-          <div className="feature-card">
+          <div className={`feature-card ${lightMode ? "light" : "dark"}`}>
             <div className="feature-number">03</div>
             <h3>
               <div className="icon-wrapper">
@@ -72,3 +77,4 @@ export default function Home() {
     </div>
   );
 }
+

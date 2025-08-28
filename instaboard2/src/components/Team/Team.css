@@ -2,6 +2,7 @@
   padding: 2rem;
   text-align: center;
   color: #f0f0f0;
+  width: 100%;
 }
 
 .team-title {
@@ -14,7 +15,7 @@
 .team-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 .load-more-btn {
@@ -46,7 +47,7 @@
   flex-wrap: wrap;
 }
 
- .custom-number-input {
+.custom-number-input {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -84,26 +85,6 @@
   background: #64b5f6;
 }
 
-
-.apply-btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(135deg, #64b5f6, #90caf9);
-  color: #1e1e1e;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(144, 202, 249, 0.3);
-}
-
-.apply-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(144, 202, 249, 0.5);
-  background: linear-gradient(135deg, #90caf9, #64b5f6);
-}
-
 .apply-btn {
   padding: 8px 16px;
   background-color: #90caf9;
@@ -118,4 +99,52 @@
 
 .apply-btn:hover {
   background-color: #64b5f6;
+}
+/* ----------------------------------------------------------------------------------------- */
+
+.light .team-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.light .load-more-btn {
+  background-color: #1976d2;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.light .load-more-btn:hover {
+  background-color: rgb(7, 76, 145);
+}
+
+.light .custom-number-input {
+  background: #eeeeee;
+  border: 1px solid #86898b;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.light .custom-number-input input {
+  color: #000000;
+}
+.light .custom-number-input button {
+  background: #1976d2;
+  color: #eeeeee;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.light .custom-number-input button:hover {
+  background: #86898b;
+}
+
+.light .apply-btn {
+  background: #1976d2;
+  color: #eeeeee;
+
+}
+
+.light.apply-btn:hover {
+  background:  #1976d2;
 }

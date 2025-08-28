@@ -1,26 +1,47 @@
+/* ========= ROOT THEMES ========= */
+:root {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #90caf9;
+  --accent-strong: #64b5f6;
+  --icon-color: #bbb;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
 
+.navbar.light {
+  --bg-color: #eeeeee;
+  --text-color: #222;
+  --accent-color: #1976d2;
+  --accent-strong: #1565c0;
+  --icon-color: #555;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ========= NAVBAR ========= */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1.5rem;
-  background-color: #1a1a1a;
-  color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: 0 2px 6px var(--shadow-color);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* ========= LOGO ========= */
 .logo {
   display: flex;
   align-items: center;
   font-size: 1.8rem;
-  color: #64b5f6;
+  color: var(--accent-strong);
   font-weight: bold;
 }
 
 .logo-icon {
   margin-right: 0.5rem;
   font-size: 1.8rem;
-  color: #90caf9;
+  color: var(--accent-color);
   filter: drop-shadow(0 0 5px rgba(144, 202, 249, 0.5));
 }
 
@@ -28,6 +49,7 @@
   text-shadow: 0 0 8px rgba(144, 202, 249, 0.3);
 }
 
+/* ========= LINKS ========= */
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -35,7 +57,7 @@
 
 .nav-link {
   text-decoration: none;
-  color: #90caf9;
+  color: var(--accent-color);
   transition: color 0.3s ease;
 }
 
@@ -47,28 +69,45 @@
 
 .nav-icon {
   font-size: 1.8rem;
-  color: #bbb;
+  color: var(--icon-color);
   transition: color 0.3s;
 }
 
 .nav-label {
   font-size: 1rem;
   margin-top: 6px;
-  color: #90caf9;
+  color: var(--accent-color);
   opacity: 0;
   transform: translateY(5px);
   transition: all 0.3s ease;
 }
+
 .nav-link.active .nav-icon,
 .nav-link:hover .nav-icon {
-  color: #90caf9;
+  color: var(--accent-color);
 }
 
 .nav-link.active .nav-label,
 .nav-link:hover .nav-label {
   opacity: 1;
   transform: translateY(0);
+  color: var(--accent-color);
 }
 
+/* ========= MODE TOGGLE BUTTON ========= */
+.mode-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  margin-left: 1rem;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: var(--accent-color);
+}
 
-
+.mode-toggle-btn:hover {
+  background-color: rgba(144, 202, 249, 0.15);
+  transform: rotate(15deg) scale(1.1);
+}
