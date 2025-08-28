@@ -57,3 +57,40 @@
 .notfound-home-button:hover {
   background-color: #616263;
 }
+/* --------------------------------------------------------------------------------------- */
+.light .notfound-container {
+
+  background: #eeeeee;
+  color: #000000;
+}
+
+.notfound-icon {
+  font-size: 8rem;
+  color: #1976d2;
+  margin: auto;
+  transition: color 0.3s ease;
+
+}
+
+
+.light .notfound-title {
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.light .notfound-message {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.notfound-home-button {
+
+  background-color: #1976d2;
+  color: #fff;
+
+}
+
+.notfound-home-button:hover {
+  background-color: #0c5dad;
+}

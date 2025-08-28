@@ -3,7 +3,7 @@ import "./UserCard.css";
 import { FaHeart, FaEnvelope, FaInfoCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-export default function UserCard({ user, onClick, updateLikes }) {
+export default function UserCard({ user, onClick, updateLikes, lightMode }) {
   const [showEmail, setShowEmail] = useState(false);
   const [liked, setLiked] = useState(false);
   const fullName = `${user.name.first} ${user.name.last}`;
@@ -13,6 +13,7 @@ export default function UserCard({ user, onClick, updateLikes }) {
     localStorage.setItem("selectedUser", JSON.stringify(user));
     navigate(`/profile/${user.login.uuid}`);
   };
+
   useEffect(() => {
     const savedLikes = JSON.parse(localStorage.getItem("likedUsers")) || [];
     const isLiked = savedLikes.some((u) => u.login.uuid === user.login.uuid);
@@ -30,10 +31,11 @@ export default function UserCard({ user, onClick, updateLikes }) {
 
     localStorage.setItem("likedUsers", JSON.stringify(savedLikes));
     setLiked(!liked);
-    if (updateLikes) updateLikes(); // Trigger parent update if needed
+    if (updateLikes) updateLikes();
   };
+
   return (
-    <div className="user-card">
+    <div className={`user-card ${lightMode ? "light" : "dark"}`}>
       <img src={user.picture.large} alt={fullName} className="user-avatar" />
 
       <h3 className="user-name">{fullName}</h3>

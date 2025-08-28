@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/Profile.css";
 
-export default function Profile() {
+export default function Profile({ lightMode }) {
   const [user, setUser] = useState(null);
   const [isFollowing, setIsFollowing] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +20,7 @@ export default function Profile() {
 
   const toggleFollow = () => {
     if (isFollowing) {
-      setShowModal(true); // Ask before unfollowing
+      setShowModal(true);
     } else {
       setIsFollowing(true);
     }
@@ -32,7 +32,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="profile-page">
+    <div className={`profile-page ${lightMode ? "light" : "dark"}`}>
       <div className="profile-header">
         <img
           src={user.picture.large}
@@ -43,11 +43,12 @@ export default function Profile() {
           <h2>{fullName}</h2>
           <p className="user-email">{user.email}</p>
           <p className="user-Location">
-            Location :{user.location.country}-{user.location.city}
+            Location: {user.location.country}-{user.location.city}
           </p>
-          <p className="user-Regestration-Date">RegesterationAge :{user.registered.date}</p>
-
-          <p className="user-Age">Age :{user.dob.age}</p>
+          <p className="user-Regestration-Date">
+            Registration Age: {user.registered.date}
+          </p>
+          <p className="user-Age">Age: {user.dob.age}</p>
 
           <div className="stats">
             <span>
@@ -68,6 +69,7 @@ export default function Profile() {
           </button>
         </div>
       </div>
+
       <div className="no-posts">
         <h2>No posts yet</h2>
       </div>
@@ -75,7 +77,7 @@ export default function Profile() {
       {showModal && (
         <div className="modal-backdrop">
           <div className="modal">
-            <p>Are you sure you want to unfollow this user {userName} ?</p>
+            <p>Are you sure you want to unfollow this user {userName}?</p>
             <div className="modal-buttons">
               <button onClick={confirmUnfollow}>Unfollow</button>
               <button onClick={() => setShowModal(false)}>Cancel</button>
@@ -83,6 +85,7 @@ export default function Profile() {
           </div>
         </div>
       )}
+
       <button className="back-btn" onClick={() => navigate("/team")}>
         ← Back to Team
       </button>

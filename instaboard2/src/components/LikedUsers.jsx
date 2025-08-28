@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import UserCard from "./UserCard/UserCard";
-import "../styles/LikedUsers.css"
-export default function LikedUsers() {
+import "../styles/LikedUsers.css";
+
+export default function LikedUsers({ lightMode }) {
   const [likedUsers, setLikedUsers] = useState([]);
 
   const loadLikedUsers = () => {
@@ -14,10 +15,10 @@ export default function LikedUsers() {
   }, []);
 
   return (
-    <div className="liked-users-page">
-      <h3>You Liked {likedUsers.length} Users</h3>
+    <div className={`liked-users-page ${lightMode ? "light" : "dark"}`}>
+      <h3 className="user-count">You Liked {likedUsers.length} Users</h3>
       {likedUsers.length === 0 ? (
-        <p>No liked users yet.</p>
+        <p className="user-count">No liked users yet.</p>
       ) : (
         <div className="team-grid">
           {likedUsers.map((user) => (
@@ -25,6 +26,7 @@ export default function LikedUsers() {
               key={user.login.uuid}
               user={user}
               updateLikes={loadLikedUsers}
+              lightMode={lightMode} // تمرير Light Mode لكل كارد
             />
           ))}
         </div>

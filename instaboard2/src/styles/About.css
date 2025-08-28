@@ -103,3 +103,39 @@
   vertical-align: middle;
   color: #64b5f6;
 }
+/* ---------------------------------------- */
+.light .about-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #1976d2;
+  border-radius: 12px;
+  color: #eeeeee;
+  line-height: 1.7;
+}
+
+.light .creator-btn {
+  background-color: #eeeeee;
+  color: #121212;
+  transition: background-color 0.3s;
+}
+
+.light .creator-btn:hover {
+  background-color: #b4aaaa;
+}
+
+.light .creator-btn.outline {
+  background-color: transparent;
+  border: 1px solid #eeeeee;
+  color: #eeeeee;
+}
+
+.light .creator-btn.outline:hover {
+  background-color: #eeeeee;
+  color: #121212;
+}
+.light .icon-inline {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  color: #eeeeee;
+}
